@@ -1,0 +1,2 @@
+# powertrade_bidding_visualization
+可视化显示电力交易市场中标数据
