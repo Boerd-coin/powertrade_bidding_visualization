@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="电力交易招投标中标电价趋势分析 - 实时展示电力市场交易数据和价格走势">
+    <meta name="keywords" content="电力交易,招投标,中标电价,趋势分析,数据可视化">
+    <meta name="author" content="电力交易分析系统">
+
+    <title>广西电力交易招投标中标电价趋势可视化</title>
+
+    <!-- Plotly.js CDN -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    
+    <!-- 样式文件引用 -->
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="responsive.css">
+    
+    <!-- 基础内联样式框架 -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        body {
+            font-family: 'STZhongsong', Arial;
+            line-height: 1.6;
+            color: #00ffff;
+            background: radial-gradient(ellipse at center, #0a0f1c 0%, #000000 70%);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            padding: 10px;
+        }
+        
+        .header {
+            flex-shrink: 0;
+            margin-bottom: 20px;
+        }
+        
+        .main-content {
+            display: flex;
+            gap: 20px;
+            flex: 1;
+            min-height: 0;
+        }
+        
+        .chart-section {
+            flex: 0 0 80%;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f1419 100%);
+            border-radius: 12px;
+            box-shadow: 
+                0 0 30px rgba(0, 255, 255, 0.2),
+                inset 0 1px 0 rgba(0, 255, 255, 0.1),
+                0 8px 32px rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+        }
+        
+        .data-section {
+            flex: 0 0 20%;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f1419 100%);
+            border-radius: 12px;
+            box-shadow: 
+                0 0 30px rgba(0, 255, 255, 0.2),
+                inset 0 1px 0 rgba(0, 255, 255, 0.1),
+                0 8px 32px rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+        }
+        
+        #price-chart {
+            flex: 1;
+            min-height: 0;
+        }
+        
+        #recent-data-table {
+            flex: 1;
+            overflow-y: auto;
+        }
+        
+        .footer {
+            flex-shrink: 0;
+            margin-top: 10px;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        
+        .loading-spinner {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 10px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+            
+            .chart-section,
+            .data-section {
+                flex: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 页面标题 -->
+        <header class="header">
+            <h1 class="page-title">广西电力交易零售市场动态</h1>
+            <p class="page-subtitle">招投标中标电价趋势可视化</p>
+        </header>
+        
+        <!-- 主要内容区域 -->
+        <main class="main-content">
+            <!-- 左侧图表区域 (80%宽度) -->
+            <section class="chart-section">
+                <header class="section-header">
+                    <h2 class="section-title">中标电价趋势图</h2>
+                </header>
+                
+                <!-- 图表加载提示 -->
+                <div id="chart-loading" class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>正在加载图表数据...</p>
+                </div>
+                
+                <!-- Plotly图表容器 -->
+                <div id="price-chart" style="width: 100%; display: none;"></div>
+            </section>
+            
+            <!-- 右侧数据表格区域 (20%宽度) -->
+            <aside class="data-section">
+                <header class="section-header">
+                    <h3 class="section-title">最新中标数据</h3>
+                    <span class="data-count">最近10条记录</span>
+                </header>
+                
+                <!-- 表格加载提示 -->
+                <div id="table-loading" class="loading">
+                    <div class="loading-spinner"></div>
+                    <p>正在加载数据...</p>
+                </div>
+                
+                <!-- 数据表格容器 -->
+                <div id="recent-data-table" style="display: none;">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>日期</th>
+                                <th>电价(元/MWh)</th>
+                                <th>用户</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            <!-- 数据将通过JavaScript动态加载 -->
+                        </tbody>
+                    </table>
+                </div>
+            </aside>
+        </main>
+    </div>
+    
+    
+    <!-- JavaScript模块 -->
+    <script src="data-handler.js"></script>
+    <script src="chart.js"></script>
+    <script src="main.js"></script>
+    
+    <!-- 通知样式 -->
+    <style>
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 20px;
+            border-radius: 6px;
+            color: white;
+            font-weight: 500;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+            z-index: 10000;
+            max-width: 300px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .notification.show {
+            transform: translateX(0);
+        }
+        
+        .notification-success {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+        }
+        
+        .notification-error {
+            background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+        }
+        
+        .notification-warning {
+            background: linear-gradient(135deg, #d68910 0%, #f39c12 100%);
+        }
+        
+        .notification-info {
+            background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
+        }
+        
+        /* 表格选中状态样式 */
+        .data-table tbody tr.selected {
+            background-color: #3498db !important;
+            color: white;
+        }
+        
+        .data-table tbody tr.selected td {
+            color: white;
+        }
+        
+        /* 图表错误显示样式 */
+        .chart-error {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-align: center;
+            color: #7f8c8d;
+        }
+        
+        .error-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .error-message {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #e74c3c;
+        }
+        
+        .retry-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background 0.3s ease;
+        }
+        
+        .retry-btn:hover {
+            background: #2980b9;
+        }
+    </style>
+</body>
+</html>

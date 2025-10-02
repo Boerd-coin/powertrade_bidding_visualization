@@ -1,0 +1,428 @@
+/* 电力交易招投标数据展示页面 - 主样式文件 */
+/* 设计风格：简洁、专业、适合数据展示 */
+/* 主色调：深蓝色和灰色，体现电力行业特色 */
+
+/* =============== 基础样式重置 =============== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+/* =============== 主体布局样式 =============== */
+body {
+    font-family: 'STZhongsong', Arial;
+    line-height: 1.6;
+    color: #00ffff;
+    background: radial-gradient(ellipse at center, #0a0f1c 0%, #000000 70%);
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 10px;
+}
+
+/* =============== 页面标题样式 =============== */
+.header {
+    flex-shrink: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    background: linear-gradient(135deg, #0a1428 0%, #1a2332 50%, #0a1428 100%);
+    color: #00ffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 
+        0 0 20px rgba(0, 255, 255, 0.3),
+        inset 0 1px 0 rgba(0, 255, 255, 0.2),
+        0 4px 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.page-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #00ffff;
+    text-shadow: 
+        0 0 10px rgba(0, 255, 255, 0.5),
+        0 0 20px rgba(0, 255, 255, 0.3),
+        0 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+}
+
+.page-subtitle {
+    font-size: 14px;
+    color: #66d9ef;
+    opacity: 0.9;
+    font-weight: 300;
+    text-shadow: 0 0 5px rgba(102, 217, 239, 0.3);
+}
+
+/* =============== 主内容区域布局 =============== */
+.main-content {
+    display: flex;
+    gap: 10px;
+    flex: 1;
+    min-height: 0;
+}
+
+/* =============== 左侧图表区域样式 (80%宽度) =============== */
+.chart-section {
+    flex: 0 0 80%;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f1419 100%);
+    border-radius: 12px;
+    box-shadow: 
+        0 0 30px rgba(0, 255, 255, 0.2),
+        inset 0 1px 0 rgba(0, 255, 255, 0.1),
+        0 8px 32px rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.chart-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #00ffff, transparent);
+    animation: scan 2s linear infinite;
+}
+
+@keyframes scan {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.chart-header {
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    border: 1px solid rgba(0, 255, 255, 0.1);
+    background: linear-gradient(135deg, #0f1419 0%, #1a1a2e 100%);
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(0, 255, 255, 0.2);
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #00ffff;
+    margin: 0;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+/* =============== 图表容器样式 =============== */
+#price-chart {
+    flex: 1;
+    min-height: 0;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 12px;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    position: relative;
+    box-shadow: 
+        inset 0 0 20px rgba(0, 255, 255, 0.1),
+        0 0 20px rgba(0, 255, 255, 0.1);
+}
+
+/* =============== 右侧数据区域样式 (20%宽度) =============== */
+.data-section {
+    flex: 0 0 20%;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f1419 100%);
+    border-radius: 12px;
+    box-shadow: 
+        0 0 30px rgba(0, 255, 255, 0.2),
+        inset 0 1px 0 rgba(0, 255, 255, 0.1),
+        0 8px 32px rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.data-section .section-title {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.data-count {
+    font-size: 12px;
+    color: #66d9ef;
+    font-weight: 400;
+    text-shadow: 0 0 5px rgba(102, 217, 239, 0.3);
+}
+
+/* =============== 数据表格样式 =============== */
+#recent-data-table {
+    flex: 1;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    background: linear-gradient(135deg, #0f1419 0%, #1a1a2e 100%);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 
+        0 0 20px rgba(0, 255, 255, 0.1),
+        inset 0 1px 0 rgba(0, 255, 255, 0.1);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.data-table thead {
+    background: linear-gradient(135deg, #0a1428 0%, #1a2332 100%);
+    color: #00ffff;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0, 255, 255, 0.2);
+}
+
+.data-table th {
+    padding: 12px 8px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border-right: 1px solid rgba(0, 255, 255, 0.3);
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+}
+
+.data-table th:last-child {
+    border-right: none;
+}
+
+.data-table tbody tr {
+    transition: all 0.2s ease;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.1);
+    color: #e0e0e0;
+}
+
+/* 斑马纹效果 */
+.data-table tbody tr:nth-child(even) {
+    background-color: rgba(0, 255, 255, 0.05);
+}
+
+.data-table tbody tr:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* 鼠标悬停高亮效果 */
+.data-table tbody tr:hover {
+    background-color: rgba(0, 255, 255, 0.1) !important;
+    transform: scale(1.01);
+    box-shadow: 
+        0 0 15px rgba(0, 255, 255, 0.3),
+        inset 0 0 10px rgba(0, 255, 255, 0.1);
+}
+
+.data-table td {
+    padding: 10px 8px;
+    text-align: center;
+    border-right: 1px solid rgba(0, 255, 255, 0.1);
+    color: #e0e0e0;
+    font-weight: 400;
+}
+
+.data-table td:last-child {
+    border-right: none;
+    color: #e0e0e0 !important;
+    font-weight: 400;
+}
+
+/* 数值高亮 */
+.data-table td:nth-child(2),
+.data-table td:nth-child(3) {
+    font-weight: 600;
+    color: #00ffff !important;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+}
+
+/* 时间列样式 */
+.data-table td:first-child {
+    color: #66d9ef !important;
+    font-weight: 500;
+    text-shadow: 0 0 5px rgba(102, 217, 239, 0.3);
+}
+
+/* =============== 加载动画样式 =============== */
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    color: #66d9ef;
+    background: rgba(26, 26, 46, 0.8);
+    border-radius: 12px;
+    min-height: 200px;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    text-shadow: 0 0 5px rgba(102, 217, 239, 0.3);
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(0, 255, 255, 0.2);
+    border-top: 4px solid #00ffff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 16px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+.loading p {
+    font-size: 14px;
+    color: #66d9ef;
+    font-weight: 500;
+    text-shadow: 0 0 5px rgba(102, 217, 239, 0.3);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* =============== 通用工具类 =============== */
+.text-center {
+    text-align: center;
+}
+
+.text-primary {
+    color: #00ffff;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.3);
+}
+
+.text-secondary {
+    color: #66d9ef;
+    text-shadow: 0 0 5px rgba(102, 217, 239, 0.3);
+}
+
+.bg-primary {
+    background: linear-gradient(135deg, #0a1428 0%, #1a2332 100%);
+}
+
+.bg-light {
+    background: rgba(26, 26, 46, 0.3);
+}
+
+.border-radius {
+    border-radius: 12px;
+}
+
+.shadow {
+    box-shadow: 
+        0 0 20px rgba(0, 255, 255, 0.2),
+        0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+/* =============== 滚动条美化 =============== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.3) 0%, rgba(0, 255, 255, 0.6) 100%);
+    border-radius: 4px;
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, rgba(0, 255, 255, 0.6) 0%, rgba(0, 255, 255, 0.8) 100%);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+}
+
+/* =============== 动画效果 =============== */
+.chart-section,
+.data-section {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =============== 焦点和可访问性 =============== */
+button:focus,
+.refresh-btn:focus {
+    outline: 2px solid #00ffff;
+    outline-offset: 2px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+/* =============== 打印样式 =============== */
+@media print {
+    .main-content {
+        flex-direction: column;
+    }
+    
+    .chart-section,
+    .data-section {
+        flex: none;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

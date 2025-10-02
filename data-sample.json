@@ -1,0 +1,289 @@
+{
+  "data": [
+    {
+      "user_name": "华东钢铁集团",
+      "power_company": "华能售电公司",
+      "bid_date": "2023-01-15",
+      "bid_price": 0.485
+    },
+    {
+      "user_name": "苏州工业园区",
+      "power_company": "国电投售电",
+      "bid_date": "2023-01-28",
+      "bid_price": 0.512
+    },
+    {
+      "user_name": "江南纺织有限公司",
+      "power_company": "大唐新能源售电",
+      "bid_date": "2023-02-14",
+      "bid_price": 0.498
+    },
+    {
+      "user_name": "宁波化工园区",
+      "power_company": "华电售电公司",
+      "bid_date": "2023-02-25",
+      "bid_price": 0.523
+    },
+    {
+      "user_name": "浙江精密制造厂",
+      "power_company": "中广核售电",
+      "bid_date": "2023-03-12",
+      "bid_price": 0.467
+    },
+    {
+      "user_name": "无锡半导体科技园",
+      "power_company": "华润电力售电",
+      "bid_date": "2023-03-24",
+      "bid_price": 0.541
+    },
+    {
+      "user_name": "杭州数据中心",
+      "power_company": "国能售电公司",
+      "bid_date": "2023-04-08",
+      "bid_price": 0.556
+    },
+    {
+      "user_name": "南京汽车制造厂",
+      "power_company": "华能售电公司",
+      "bid_date": "2023-04-19",
+      "bid_price": 0.492
+    },
+    {
+      "user_name": "上海医药工业园",
+      "power_company": "申能售电公司",
+      "bid_date": "2023-05-05",
+      "bid_price": 0.578
+    },
+    {
+      "user_name": "常州新材料公司",
+      "power_company": "大唐新能源售电",
+      "bid_date": "2023-05-16",
+      "bid_price": 0.434
+    },
+    {
+      "user_name": "昆山电子科技城",
+      "power_company": "华电售电公司",
+      "bid_date": "2023-06-03",
+      "bid_price": 0.489
+    },
+    {
+      "user_name": "青岛港务集团",
+      "power_company": "国电投售电",
+      "bid_date": "2023-06-18",
+      "bid_price": 0.512
+    },
+    {
+      "user_name": "济南钢铁有限公司",
+      "power_company": "华能售电公司",
+      "bid_date": "2023-07-02",
+      "bid_price": 0.456
+    },
+    {
+      "user_name": "烟台开发区",
+      "power_company": "中广核售电",
+      "bid_date": "2023-07-21",
+      "bid_price": 0.523
+    },
+    {
+      "user_name": "威海海洋装备厂",
+      "power_company": "华润电力售电",
+      "bid_date": "2023-08-07",
+      "bid_price": 0.501
+    },
+    {
+      "user_name": "淄博化工集团",
+      "power_company": "国能售电公司",
+      "bid_date": "2023-08-25",
+      "bid_price": 0.445
+    },
+    {
+      "user_name": "东莞制造业园区",
+      "power_company": "南方电网售电",
+      "bid_date": "2023-09-11",
+      "bid_price": 0.567
+    },
+    {
+      "user_name": "深圳科技园",
+      "power_company": "华能售电公司",
+      "bid_date": "2023-09-28",
+      "bid_price": 0.612
+    },
+    {
+      "user_name": "佛山陶瓷工业城",
+      "power_company": "大唐新能源售电",
+      "bid_date": "2023-10-14",
+      "bid_price": 0.478
+    },
+    {
+      "user_name": "中山电器制造厂",
+      "power_company": "华电售电公司",
+      "bid_date": "2023-10-29",
+      "bid_price": 0.534
+    },
+    {
+      "user_name": "珠海新能源产业园",
+      "power_company": "中广核售电",
+      "bid_date": "2023-11-15",
+      "bid_price": 0.498
+    },
+    {
+      "user_name": "广州汽车城",
+      "power_company": "南方电网售电",
+      "bid_date": "2023-11-30",
+      "bid_price": 0.556
+    },
+    {
+      "user_name": "天津滨海新区",
+      "power_company": "华润电力售电",
+      "bid_date": "2023-12-12",
+      "bid_price": 0.423
+    },
+    {
+      "user_name": "石家庄钢铁集团",
+      "power_company": "国电投售电",
+      "bid_date": "2023-12-28",
+      "bid_price": 0.467
+    },
+    {
+      "user_name": "唐山重工业园",
+      "power_company": "华能售电公司",
+      "bid_date": "2024-01-16",
+      "bid_price": 0.512
+    },
+    {
+      "user_name": "保定新能源科技园",
+      "power_company": "国能售电公司",
+      "bid_date": "2024-02-02",
+      "bid_price": 0.489
+    },
+    {
+      "user_name": "沧州化工园区",
+      "power_company": "大唐新能源售电",
+      "bid_date": "2024-02-18",
+      "bid_price": 0.534
+    },
+    {
+      "user_name": "邯郸钢铁有限公司",
+      "power_company": "华电售电公司",
+      "bid_date": "2024-03-05",
+      "bid_price": 0.456
+    },
+    {
+      "user_name": "秦皇岛港口集团",
+      "power_company": "中广核售电",
+      "bid_date": "2024-03-22",
+      "bid_price": 0.578
+    },
+    {
+      "user_name": "合肥高新技术区",
+      "power_company": "华润电力售电",
+      "bid_date": "2024-04-08",
+      "bid_price": 0.501
+    },
+    {
+      "user_name": "芜湖汽车工业园",
+      "power_company": "国电投售电",
+      "bid_date": "2024-04-25",
+      "bid_price": 0.467
+    },
+    {
+      "user_name": "马鞍山钢铁集团",
+      "power_company": "华能售电公司",
+      "bid_date": "2024-05-12",
+      "bid_price": 0.523
+    },
+    {
+      "user_name": "安庆化工园区",
+      "power_company": "国能售电公司",
+      "bid_date": "2024-05-28",
+      "bid_price": 0.445
+    },
+    {
+      "user_name": "蚌埠玻璃工业城",
+      "power_company": "大唐新能源售电",
+      "bid_date": "2024-06-14",
+      "bid_price": 0.489
+    },
+    {
+      "user_name": "淮南煤化工集团",
+      "power_company": "华电售电公司",
+      "bid_date": "2024-06-30",
+      "bid_price": 0.412
+    },
+    {
+      "user_name": "重庆制造业基地",
+      "power_company": "中广核售电",
+      "bid_date": "2024-07-16",
+      "bid_price": 0.534
+    },
+    {
+      "user_name": "成都电子信息园",
+      "power_company": "华润电力售电",
+      "bid_date": "2024-08-02",
+      "bid_price": 0.567
+    },
+    {
+      "user_name": "绵阳科技城",
+      "power_company": "国电投售电",
+      "bid_date": "2024-08-19",
+      "bid_price": 0.498
+    },
+    {
+      "user_name": "德阳重装基地",
+      "power_company": "华能售电公司",
+      "bid_date": "2024-09-05",
+      "bid_price": 0.456
+    },
+    {
+      "user_name": "宜宾化工园区",
+      "power_company": "国能售电公司",
+      "bid_date": "2024-09-22",
+      "bid_price": 0.512
+    },
+    {
+      "user_name": "泸州酒业集团",
+      "power_company": "大唐新能源售电",
+      "bid_date": "2024-10-08",
+      "bid_price": 0.478
+    },
+    {
+      "user_name": "南充丝绸工业园",
+      "power_company": "华电售电公司",
+      "bid_date": "2024-10-25",
+      "bid_price": 0.523
+    },
+    {
+      "user_name": "达州能源化工城",
+      "power_company": "中广核售电",
+      "bid_date": "2024-11-11",
+      "bid_price": 0.445
+    },
+    {
+      "user_name": "广安电子产业园",
+      "power_company": "华润电力售电",
+      "bid_date": "2024-11-28",
+      "bid_price": 0.589
+    },
+    {
+      "user_name": "内江制糖工业区",
+      "power_company": "国电投售电",
+      "bid_date": "2024-12-14",
+      "bid_price": 0.501
+    }
+  ],
+  "metadata": {
+    "total_records": 45,
+    "date_range": {
+      "start": "2023-01-15",
+      "end": "2024-12-14"
+    },
+    "price_range": {
+      "min": 0.412,
+      "max": 0.612,
+      "average": 0.506
+    },
+    "data_description": "电力交易招投标中标数据示例，包含用户名称、售电公司、中标日期和中标电价信息",
+    "generated_date": "2025-10-02",
+    "data_source": "模拟数据，仅用于展示目的"
+  }
+}
