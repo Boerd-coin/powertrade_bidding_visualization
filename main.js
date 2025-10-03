@@ -33,7 +33,7 @@ class PowerTradeApp {
         
         // 配置
         this.config = {
-            dataUrl: './data-sample.json',
+            dataUrl: './bidding_data.json',
             recentRecordsCount: 10
         };
 

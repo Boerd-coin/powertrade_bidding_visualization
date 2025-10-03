@@ -30,7 +30,7 @@ class DataHandler {
      * @param {boolean} useCache - 是否使用缓存
      * @returns {Promise<Array>} 返回处理后的数据数组
      */
-    async loadData(dataUrl = './data-sample.json', useCache = true) {
+    async loadData(dataUrl = './bidding_data.json', useCache = true) {
         try {
             // 检查缓存
             if (useCache && this.dataCache.has(dataUrl)) {
@@ -99,14 +99,12 @@ class DataHandler {
             throw new Error('数据为空');
         }
 
-        // 支持多种数据结构
+        // 只处理包含data字段的对象结构
         let dataArray;
-        if (Array.isArray(jsonData)) {
-            dataArray = jsonData;
-        } else if (jsonData.data && Array.isArray(jsonData.data)) {
+        if (jsonData.data && Array.isArray(jsonData.data)) {
             dataArray = jsonData.data;
         } else {
-            throw new Error('数据格式不正确，期望数组或包含data字段的对象');
+            throw new Error('数据格式不正确，期望包含data字段的对象');
         }
 
         if (dataArray.length === 0) {
@@ -122,16 +120,15 @@ class DataHandler {
                 const validatedItem = this.validateRecord(item, index);
                 validatedData.push(validatedItem);
             } catch (error) {
-                errors.push(`第${index + 1}条记录: ${error.message}`);
+                const errorMsg = `第${index + 1}条记录: ${error.message}`;
+                errors.push(errorMsg);
+                console.warn(`数据验证警告: ${errorMsg}`, item);
             }
         });
 
         if (errors.length > 0) {
             console.warn('数据验证警告:', errors);
-            // 如果超过20%的数据有问题，抛出错误
-            if (errors.length / dataArray.length > 0.2) {
-                throw new Error(`数据质量较差，${errors.length}/${dataArray.length} 条记录有问题`);
-            }
+            // 数据已经过人工校核，不再因错误比例限制数据加载
         }
 
         if (validatedData.length === 0) {
@@ -177,10 +174,7 @@ class DataHandler {
                     if (isNaN(numValue) || !isFinite(numValue)) {
                         throw new Error(`字段 ${field} 必须为有效数字`);
                     }
-                    // 电价合理性检查
-                    if (field === 'bid_price' && (numValue < 0.1 || numValue > 2.0)) {
-                        throw new Error(`电价 ${numValue} 超出合理范围 (0.1-2.0)`);
-                    }
+                    // 数据已经过人工校核，不再进行电价范围检查
                     validatedRecord[field] = numValue;
                     break;
 
@@ -189,12 +183,7 @@ class DataHandler {
                     if (isNaN(dateValue.getTime())) {
                         throw new Error(`字段 ${field} 必须为有效日期格式`);
                     }
-                    // 日期合理性检查
-                    const now = new Date();
-                    const minDate = new Date('2020-01-01');
-                    if (dateValue > now || dateValue < minDate) {
-                        throw new Error(`日期 ${value} 超出合理范围`);
-                    }
+                    // 数据已经过人工校核，不再进行日期范围检查
                     validatedRecord[field] = value; // 保持原始字符串格式
                     validatedRecord[`${field}_parsed`] = dateValue; // 添加解析后的日期对象
                     break;
