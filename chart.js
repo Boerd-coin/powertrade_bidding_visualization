@@ -229,7 +229,7 @@ class PowerTradeChart {
                 `用户: ${item.user_name}<br>` +
                 `售电公司: ${item.power_company}<br>` +
                 `日期: ${item.bid_date}<br>` +
-                `电价: ${item.bid_price} 元/kWh`
+                `电价: ${item.bid_price} 元/MWh`
             ),
             mode: 'markers',
             type: 'scatter',
