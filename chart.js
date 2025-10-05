@@ -268,8 +268,8 @@ class PowerTradeChart {
             }
         };
 
-        // 添加平滑趋势线
-        const trendLine = this.calculateSmoothTrendLine(sortedData);
+        // 添加简单线性趋势线
+        const trendLine = this.calculateLinearTrendLine(sortedData);
         
         return [scatter, trendLine];
     }
@@ -293,119 +293,7 @@ class PowerTradeChart {
     }
 
     /**
-     * 计算平滑趋势线 (使用移动平均和样条插值)
-     * @param {Array} data - 排序后的数据
-     * @returns {Object} 平滑趋势线数据
-     */
-    calculateSmoothTrendLine(data) {
-        const n = data.length;
-        
-        if (n < 3) {
-            // 数据点太少，使用简单线性趋势
-            return this.calculateLinearTrendLine(data);
-        }
-
-        // 使用移动平均平滑数据
-        const windowSize = Math.max(3, Math.floor(n / 8));
-        const smoothedData = this.movingAverage(data.map(item => item.bid_price), windowSize);
-        
-        // 创建更密集的插值点以获得平滑曲线
-        const interpolationPoints = Math.max(50, n * 2);
-        const xDates = data.map(item => item.bid_date);
-        const smoothX = [];
-        const smoothY = [];
-        
-        // 生成插值点
-        for (let i = 0; i < interpolationPoints; i++) {
-            const ratio = i / (interpolationPoints - 1);
-            const index = ratio * (n - 1);
-            const lowerIndex = Math.floor(index);
-            const upperIndex = Math.min(lowerIndex + 1, n - 1);
-            const fraction = index - lowerIndex;
-            
-            // 时间插值
-            const lowerDate = new Date(xDates[lowerIndex]);
-            const upperDate = new Date(xDates[upperIndex]);
-            const interpolatedTime = new Date(lowerDate.getTime() + fraction * (upperDate.getTime() - lowerDate.getTime()));
-            
-            // 价格插值（使用三次样条插值的简化版本）
-            const interpolatedPrice = this.cubicInterpolate(smoothedData, index);
-            
-            smoothX.push(interpolatedTime.toISOString().split('T')[0]);
-            smoothY.push(interpolatedPrice);
-        }
-        
-        return {
-            x: smoothX,
-            y: smoothY,
-            mode: 'lines',
-            type: 'scatter',
-            name: '平滑趋势线',
-            line: {
-                color: 'rgba(255, 107, 107, 0.8)',
-                width: 3,
-                shape: 'spline',
-                smoothing: 1.3
-            },
-            hovertemplate: '趋势线<br>电价: %{y:.3f} 元/kWh<extra></extra>',
-            opacity: 0.9,
-            fill: 'none'
-        };
-    }
-
-    /**
-     * 移动平均计算
-     * @param {Array} data - 数据数组
-     * @param {number} windowSize - 窗口大小
-     * @returns {Array} 平滑后的数据
-     */
-    movingAverage(data, windowSize) {
-        const result = [];
-        const halfWindow = Math.floor(windowSize / 2);
-        
-        for (let i = 0; i < data.length; i++) {
-            let sum = 0;
-            let count = 0;
-            
-            for (let j = Math.max(0, i - halfWindow); j <= Math.min(data.length - 1, i + halfWindow); j++) {
-                sum += data[j];
-                count++;
-            }
-            
-            result.push(sum / count);
-        }
-        
-        return result;
-    }
-
-    /**
-     * 三次插值
-     * @param {Array} data - 数据数组
-     * @param {number} index - 插值位置
-     * @returns {number} 插值结果
-     */
-    cubicInterpolate(data, index) {
-        const i = Math.floor(index);
-        const fraction = index - i;
-        
-        if (i < 1) return data[0];
-        if (i >= data.length - 2) return data[data.length - 1];
-        
-        const y0 = data[i - 1];
-        const y1 = data[i];
-        const y2 = data[i + 1];
-        const y3 = data[i + 2] || y2;
-        
-        const a = -0.5 * y0 + 1.5 * y1 - 1.5 * y2 + 0.5 * y3;
-        const b = y0 - 2.5 * y1 + 2 * y2 - 0.5 * y3;
-        const c = -0.5 * y0 + 0.5 * y2;
-        const d = y1;
-        
-        return a * fraction * fraction * fraction + b * fraction * fraction + c * fraction + d;
-    }
-
-    /**
-     * 计算线性趋势线 (备用方法)
+     * 计算线性趋势线
      * @param {Array} data - 排序后的数据
      * @returns {Object} 线性趋势线数据
      */
@@ -423,20 +311,23 @@ class PowerTradeChart {
         const slope = (n * sumXY - sumX * sumY) / (n * sumXX - sumX * sumX);
         const intercept = (sumY - slope * sumX) / n;
         
-        const trendY = xValues.map(x => slope * x + intercept);
+        // 只用起点和终点确保是直线
+        const startY = slope * 0 + intercept;
+        const endY = slope * (n - 1) + intercept;
         
         return {
-            x: data.map(item => item.bid_date),
-            y: trendY,
+            x: [data[0].bid_date, data[n - 1].bid_date],  // 只用起始和结束日期
+            y: [startY, endY],  // 只用起始和结束的Y值
             mode: 'lines',
             type: 'scatter',
             name: '线性趋势线',
             line: {
                 color: 'rgba(255, 107, 107, 0.8)',
                 width: 2,
-                dash: 'dash'
+                dash: 'dash',
+                shape: 'linear'  // 强制指定为直线
             },
-            hovertemplate: '趋势线<br>电价: %{y:.3f} 元/kWh<extra></extra>',
+            hovertemplate: '线性趋势<br>电价: %{y:.3f} 元/kWh<extra></extra>',
             opacity: 0.7
         };
     }
