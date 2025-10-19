@@ -494,7 +494,6 @@ class PowerTradeApp {
      * @param {Object} data - 数据项
      */
     showPointDetails(data) {
-        // 可以在这里实现详情面板的显示逻辑
         console.log('显示详情:', data);
     }
 
@@ -504,8 +503,7 @@ class PowerTradeApp {
      * @param {HTMLElement} row - 表格行
      */
     showRowTooltip(item, row) {
-        // 可以在这里实现提示框逻辑
-        row.title = `${item.user_name} - ${item.power_company}\n日期: ${item.bid_date}\n电价: ${item.bid_price} 元/kWh`;
+        row.title = `${item.user_name} - ${item.power_company}\n日期: ${item.bid_date}\n电价: ${item.bid_price} 元/MWh`;
     }
 
     /**

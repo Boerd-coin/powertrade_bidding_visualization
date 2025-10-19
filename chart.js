@@ -327,7 +327,7 @@ class PowerTradeChart {
                 dash: 'dash',
                 shape: 'linear'  // 强制指定为直线
             },
-            hovertemplate: '线性趋势<br>电价: %{y:.3f} 元/kWh<extra></extra>',
+            hovertemplate: '线性趋势<br>电价: %{y:.3f} 元/MWh<extra></extra>',
             opacity: 0.7
         };
     }

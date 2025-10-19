@@ -1,6 +1,12 @@
 {
   "data": [
     {
+      "user_name": "岑溪市中医医院",
+      "power_company": "新奥（广西）能源销售有限公司",
+      "bid_date": "2025-10-15",
+      "bid_price": 280.0
+    },
+    {
       "user_name": "中国电信股份有限公司广西分公司",
       "power_company": "广西鼎聚新能源有限公司",
       "bid_date": "2025-09-30",
@@ -214,7 +220,7 @@
       "user_name": "广西百色工业投资发展集团有限公司",
       "power_company": "新奥（广西）能源销售有限公司",
       "bid_date": "2025-01-14",
-      "bid_price": 344.0
+      "bid_price": 344.4
     },
     {
       "user_name": "东风柳州汽车有限公司",
