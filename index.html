@@ -14,133 +14,29 @@
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="responsive.css">
     
-    <!-- 基础内联样式框架 -->
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html, body {
-            height: 100%;
-            overflow: hidden;
-        }
-        
-        body {
-            font-family: 'STZhongsong', Arial;
-            line-height: 1.6;
-            color: #00ffff;
-            background: radial-gradient(ellipse at center, #0a0f1c 0%, #000000 70%);
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .container {
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-            padding: 10px;
-        }
-        
-        .header {
-            flex-shrink: 0;
-            margin-bottom: 20px;
-        }
-        
-        .main-content {
-            display: flex;
-            gap: 20px;
-            flex: 1;
-            min-height: 0;
-        }
-        
-        .chart-section {
-            flex: 0 0 80%;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f1419 100%);
-            border-radius: 12px;
-            box-shadow: 
-                0 0 30px rgba(0, 255, 255, 0.2),
-                inset 0 1px 0 rgba(0, 255, 255, 0.1),
-                0 8px 32px rgba(0, 0, 0, 0.6);
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            min-height: 0;
-            border: 1px solid rgba(0, 255, 255, 0.2);
-        }
-        
-        .data-section {
-            flex: 0 0 20%;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f1419 100%);
-            border-radius: 12px;
-            box-shadow: 
-                0 0 30px rgba(0, 255, 255, 0.2),
-                inset 0 1px 0 rgba(0, 255, 255, 0.1),
-                0 8px 32px rgba(0, 0, 0, 0.6);
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            min-height: 0;
-            border: 1px solid rgba(0, 255, 255, 0.2);
-        }
-        
-        #price-chart {
-            flex: 1;
-            min-height: 0;
-        }
-        
-        #recent-data-table {
-            flex: 1;
-            overflow-y: auto;
-        }
-        
-        .footer {
-            flex-shrink: 0;
-            margin-top: 10px;
-        }
-        
-        .loading {
-            text-align: center;
-            padding: 40px;
-            color: #666;
-        }
-        
-        .loading-spinner {
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid #3498db;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin-bottom: 10px;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        @media (max-width: 768px) {
-            .main-content {
-                flex-direction: column;
-            }
-            
-            .chart-section,
-            .data-section {
-                flex: 1;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="container">
         <!-- 页面标题 -->
         <header class="header">
-            <h1 class="page-title">广西电力交易零售市场动态</h1>
+            <h1 class="page-title">电力交易零售市场动态</h1>
             <p class="page-subtitle">中标电价趋势可视化</p>
         </header>
+        
+        <!-- 省份选择导航栏 -->
+        <nav class="province-nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#广西壮族自治区" class="nav-link active" data-region="广西壮族自治区">广西壮族自治区</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#新疆维吾尔自治区" class="nav-link" data-region="新疆维吾尔自治区">新疆维吾尔自治区</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#陕西省" class="nav-link" data-region="陕西省">陕西省</a>
+                </li>
+            </ul>
+        </nav>
         
         <!-- 主要内容区域 -->
         <main class="main-content">
@@ -280,6 +176,70 @@
         
         .retry-btn:hover {
             background: #2980b9;
+        }
+        
+        /* 省份导航栏样式 */
+        .province-nav {
+            margin: 20px 0 30px 0;
+            background: rgba(26, 26, 46, 0.8);
+            border-radius: 10px;
+            border: 1px solid rgba(0, 255, 255, 0.2);
+            padding: 0;
+            backdrop-filter: blur(10px);
+        }
+        
+        .nav-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 0;
+        }
+        
+        .nav-item {
+            flex: 1;
+        }
+        
+        .nav-link {
+            display: block;
+            padding: 12px 20px;
+            color: rgba(102, 217, 239, 0.8);
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: 500;
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            background: rgba(0, 255, 255, 0.1);
+            color: #00ffff;
+            transform: translateY(-1px);
+        }
+        
+        .nav-link.active {
+            background: linear-gradient(135deg, #00ffff, #0099cc);
+            color: #1a1a2e;
+            font-weight: 600;
+        }
+        
+        .nav-link.active:hover {
+            transform: none;
+        }
+        
+        /* 响应式导航栏 */
+        @media (max-width: 768px) {
+            .nav-list {
+                flex-direction: column;
+            }
+            
+            .nav-link {
+                padding: 10px 15px;
+                font-size: 13px;
+            }
         }
     </style>
 </body>

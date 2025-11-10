@@ -28,7 +28,8 @@ class PowerTradeApp {
             isLoading: false,
             currentData: null,
             selectedPoint: null,
-            lastUpdateTime: null
+            lastUpdateTime: null,
+            currentRegion: '广西壮族自治区' // 默认显示广西
         };
         
         // 配置
@@ -78,7 +79,8 @@ class PowerTradeApp {
             tableContainer: document.getElementById('recent-data-table'),
             chartLoading: document.getElementById('chart-loading'),
             tableLoading: document.getElementById('table-loading'),
-            tableBody: document.getElementById('table-body')
+            tableBody: document.getElementById('table-body'),
+            navLinks: document.querySelectorAll('.nav-link')
         };
 
         // 验证必要元素是否存在
@@ -120,6 +122,17 @@ class PowerTradeApp {
             this.handlePointSelection(event.detail);
         });
 
+        // 绑定省份导航栏点击事件
+        this.elements.navLinks.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault();
+                const region = link.getAttribute('data-region');
+                if (region && region !== this.state.currentRegion) {
+                    this.loadRegionData(region);
+                }
+            });
+        });
+
         // 页面可见性变化事件（处理标签页切换）
         document.addEventListener('visibilitychange', () => {
             if (!document.hidden && this.state.isInitialized) {
@@ -148,8 +161,8 @@ class PowerTradeApp {
             this.state.isLoading = true;
             this.showLoading(true);
 
-            // 加载数据
-            const data = await this.dataHandler.loadData(this.config.dataUrl);
+            // 加载默认省份数据
+            const data = await this.dataHandler.loadData(this.config.dataUrl, true, this.state.currentRegion);
             
             if (!data || data.length === 0) {
                 throw new Error('没有可用的数据');
@@ -167,12 +180,78 @@ class PowerTradeApp {
             this.updateLastUpdateTime();
             
             this.showLoading(false);
-            console.log(`初始数据加载完成，共 ${data.length} 条记录`);
+            console.log(`初始数据加载完成，共 ${data.length} 条记录，地区: ${this.state.currentRegion}`);
             
         } catch (error) {
             this.showLoading(false);
             throw error;
         }
+    }
+
+    /**
+     * 加载指定省份的数据
+     * @param {string} region - 省份名称
+     */
+    async loadRegionData(region) {
+        try {
+            if (this.state.isLoading) {
+                console.warn('正在加载数据，请稍候');
+                return;
+            }
+
+            console.log(`切换到省份: ${region}`);
+            
+            this.state.isLoading = true;
+            this.showLoading(true);
+
+            // 更新导航栏状态
+            this.updateNavActiveState(region);
+
+            // 加载指定省份数据
+            const data = await this.dataHandler.loadData(this.config.dataUrl, true, region);
+            
+            if (!data || data.length === 0) {
+                throw new Error(`${region}暂无数据`);
+            }
+
+            // 更新应用状态
+            this.state.currentData = data;
+            this.state.currentRegion = region;
+            this.state.selectedPoint = null; // 清除之前的选择
+
+            // 更新图表
+            await this.chart.updateChart(data);
+            
+            // 更新表格
+            this.updateRecentDataTable(data);
+            
+            // 更新最后更新时间
+            this.updateLastUpdateTime();
+            
+            this.showLoading(false);
+            this.showNotification(`已切换至${region}`, 'success');
+            
+            console.log(`省份数据加载完成，共 ${data.length} 条记录，地区: ${region}`);
+            
+        } catch (error) {
+            this.showLoading(false);
+            this.handleError(`加载${region}数据失败`, error);
+        }
+    }
+
+    /**
+     * 更新导航栏激活状态
+     * @param {string} activeRegion - 激活的省份
+     */
+    updateNavActiveState(activeRegion) {
+        this.elements.navLinks.forEach(link => {
+            const region = link.getAttribute('data-region');
+            if (region === activeRegion) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
     }
 
     /**

@@ -1,262 +1,298 @@
 {
   "data": [
     {
-      "user_name": "广西扶绥县正信资产投资管理有限公司",
-      "power_company": "瑞亿新电气有限责任公司",
-      "bid_date": "2025-10-21",
-      "bid_price": 316.0
+      "广西壮族自治区": [
+        {
+          "user_name": "广西扶绥县正信资产投资管理有限公司",
+          "power_company": "瑞亿新电气有限责任公司",
+          "bid_date": "2025-10-21",
+          "bid_price": 316.0
+        },
+        {
+          "user_name": "岑溪市中医医院",
+          "power_company": "新奥（广西）能源销售有限公司",
+          "bid_date": "2025-10-15",
+          "bid_price": 280.0
+        },
+        {
+          "user_name": "中国电信股份有限公司广西分公司",
+          "power_company": "广西鼎聚新能源有限公司",
+          "bid_date": "2025-09-30",
+          "bid_price": 300.0
+        },
+        {
+          "user_name": "中国电信股份有限公司广西分公司",
+          "power_company": "华润电力（广西）销售有限公司",
+          "bid_date": "2025-09-30",
+          "bid_price": 300.0
+        },
+        {
+          "user_name": "横州市中医医院",
+          "power_company": "新奥（广西）能源销售有限公司",
+          "bid_date": "2025-09-17",
+          "bid_price": 280.0
+        },
+        {
+          "user_name": "河池市国有资本投资运营（集团）有限公司",
+          "power_company": "邦道科技有限公司",
+          "bid_date": "2025-08-25",
+          "bid_price": 230.0
+        },
+        {
+          "user_name": "北海市妇幼保健院（北海市妇幼保健计划生育服务中心）",
+          "power_company": "广西能弘配售电有限公司",
+          "bid_date": "2025-08-20",
+          "bid_price": 293.0
+        },
+        {
+          "user_name": "南宁威凯智慧物业服务有限公司",
+          "power_company": "华润电力（广西）销售有限公司",
+          "bid_date": "2025-08-13",
+          "bid_price": 298.5
+        },
+        {
+          "user_name": "北海润捷城市公共交通运输有限公司",
+          "power_company": "广西能弘配售电有限公司",
+          "bid_date": "2025-08-07",
+          "bid_price": 304.0
+        },
+        {
+          "user_name": "北海市中医医院",
+          "power_company": "广东华粤售电有限公司",
+          "bid_date": "2025-08-01",
+          "bid_price": 307.0
+        },
+        {
+          "user_name": "广西泽源环保水务有限公司",
+          "power_company": "广西能源联合售电有限公司",
+          "bid_date": "2025-07-31",
+          "bid_price": 305.0
+        },
+        {
+          "user_name": "中电建广西新材料有限公司",
+          "power_company": "华润电力（广西）销售有限公司",
+          "bid_date": "2025-07-31",
+          "bid_price": 305.0
+        },
+        {
+          "user_name": "中国银行股份有限公司广西区分行",
+          "power_company": "中国华电集团清洁能源有限公司",
+          "bid_date": "2025-07-11",
+          "bid_price": 315.0
+        },
+        {
+          "user_name": "象州瑞象投资开发集团有限公司",
+          "power_company": "国启中能（广西）电力有限公司",
+          "bid_date": "2025-07-03",
+          "bid_price": 338.0
+        },
+        {
+          "user_name": "广西岑兴高速公路发展有限公司",
+          "power_company": "国桂电力有限公司",
+          "bid_date": "2025-07-03",
+          "bid_price": 316.0
+        },
+        {
+          "user_name": "广西梧州岑梧高速公路有限公司",
+          "power_company": "国桂电力有限公司",
+          "bid_date": "2025-07-03",
+          "bid_price": 316.0
+        },
+        {
+          "user_name": "大新县中医医院",
+          "power_company": "瑞亿新电气有限责任公司",
+          "bid_date": "2025-06-29",
+          "bid_price": 330.0
+        },
+        {
+          "user_name": "广西新发展交通集团有限公司",
+          "power_company": "新奥（广西）能源销售有限公司",
+          "bid_date": "2025-06-16",
+          "bid_price": 335.0
+        },
+        {
+          "user_name": "宾阳县人民医院",
+          "power_company": "瑞亿新电气有限责任公司",
+          "bid_date": "2025-05-30",
+          "bid_price": 340.0
+        },
+        {
+          "user_name": "广西交通投资集团有限公司",
+          "power_company": "华能广西能源销售有限责任公司",
+          "bid_date": "2025-04-30",
+          "bid_price": 300.0
+        },
+        {
+          "user_name": "柳州东城文化旅游管理有限公司",
+          "power_company": "新奥（广西）能源销售有限公司",
+          "bid_date": "2025-04-24",
+          "bid_price": 332.5
+        },
+        {
+          "user_name": "广西五洲金桥农产品有限公司",
+          "power_company": "广西能源联合售电有限公司",
+          "bid_date": "2025-04-22",
+          "bid_price": 336.0
+        },
+        {
+          "user_name": "南宁凯鑫新材料有限公司",
+          "power_company": "瑞亿新电气有限责任公司",
+          "bid_date": "2025-04-18",
+          "bid_price": 333.0
+        },
+        {
+          "user_name": "广西交投资产管理有限公司",
+          "power_company": "广西国电投博能售电有限公司",
+          "bid_date": "2025-04-08",
+          "bid_price": 319.6
+        },
+        {
+          "user_name": "广西交投安祺物业有限公司",
+          "power_company": "广西国电投博能售电有限公司",
+          "bid_date": "2025-04-03",
+          "bid_price": 339.5
+        },
+        {
+          "user_name": "广西交投安祺物业有限公司",
+          "power_company": "华能广西能源销售有限责任公司",
+          "bid_date": "2025-04-03",
+          "bid_price": 339.5
+        },
+        {
+          "user_name": "广西交投安祺物业有限公司",
+          "power_company": "新奥（广西）能源销售有限公司",
+          "bid_date": "2025-04-03",
+          "bid_price": 339.5
+        },
+        {
+          "user_name": "广西南宁邕州饭店有限公司",
+          "power_company": "国桂电力有限公司",
+          "bid_date": "2025-03-17",
+          "bid_price": 330.0
+        },
+        {
+          "user_name": "广西华盛集团北海裕泰工艺有限责任公司",
+          "power_company": "新奥（广西）能源销售有限公司",
+          "bid_date": "2025-03-14",
+          "bid_price": 330.0
+        },
+        {
+          "user_name": "南宁明园饭店有限责任公司",
+          "power_company": "国桂电力有限公司",
+          "bid_date": "2025-03-10",
+          "bid_price": 330.0
+        },
+        {
+          "user_name": "河池市国有资本投资运营（集团）有限公司",
+          "power_company": "广西大任能源有限责任公司",
+          "bid_date": "2025-02-20",
+          "bid_price": 334.9
+        },
+        {
+          "user_name": "广西华原过滤系统股份有限公司",
+          "power_company": "广西普沃售电有限公司",
+          "bid_date": "2025-01-24",
+          "bid_price": 343.0
+        },
+        {
+          "user_name": "桂林桂广滑石开发有限公司",
+          "power_company": "广西大唐桂冠电力营销有限公司",
+          "bid_date": "2025-01-23",
+          "bid_price": 346.0
+        },
+        {
+          "user_name": "广西祥盛家居材料科技股份有限公司",
+          "power_company": "广西灏宇能源发展有限公司",
+          "bid_date": "2025-01-22",
+          "bid_price": 338.8
+        },
+        {
+          "user_name": "广西荣桂国际智慧物流有限公司",
+          "power_company": "广西新电力能源发展有限公司",
+          "bid_date": "2025-01-20",
+          "bid_price": 343.8
+        },
+        {
+          "user_name": "桂林市鼎晟新能源科技股份有限公司",
+          "power_company": "新奥（广西）能源销售有限公司",
+          "bid_date": "2025-01-20",
+          "bid_price": 333.9
+        },
+        {
+          "user_name": "广西百色工业投资发展集团有限公司",
+          "power_company": "新奥（广西）能源销售有限公司",
+          "bid_date": "2025-01-14",
+          "bid_price": 340.0
+        },
+        {
+          "user_name": "广西百色工业投资发展集团有限公司",
+          "power_company": "新奥（广西）能源销售有限公司",
+          "bid_date": "2025-01-14",
+          "bid_price": 344.4
+        },
+        {
+          "user_name": "东风柳州汽车有限公司",
+          "power_company": "新奥（广西）能源销售有限公司",
+          "bid_date": "2025-01-13",
+          "bid_price": 340.0
+        },
+        {
+          "user_name": "广西五金矿产进出口集团有限公司钦州分公司",
+          "power_company": "广西春凯源新能源有限公司",
+          "bid_date": "2025-01-10",
+          "bid_price": 339.6
+        },
+        {
+          "user_name": "广西防城港北投环保水务有限公司",
+          "power_company": "广西博阳售电有限公司",
+          "bid_date": "2025-01-06",
+          "bid_price": 344.0
+        },
+        {
+          "user_name": "广西防城港北投环保水务有限公司",
+          "power_company": "赛富电力集团股份有限公司",
+          "bid_date": "2025-01-06",
+          "bid_price": 344.0
+        },
+        {
+          "user_name": "广西博庆食品有限公司",
+          "power_company": "广西国能综合能源服务有限公司",
+          "bid_date": "2025-01-03",
+          "bid_price": 375.0
+        }
+      ]
     },
     {
-      "user_name": "岑溪市中医医院",
-      "power_company": "新奥（广西）能源销售有限公司",
-      "bid_date": "2025-10-15",
-      "bid_price": 280.0
+      "陕西省": [
+        {
+          "user_name": "永寿县人民医院",
+          "power_company": "国汇电能（山西）实业有限公司",
+          "bid_date": "2025-09-29",
+          "bid_price": 308.0
+        },
+        {
+          "user_name": "西安普天通信有限公司",
+          "power_company": "陕西洁能售电有限公司",
+          "bid_date": "2025-06-06",
+          "bid_price": 305.0
+        },
+        {
+          "user_name": "陕西利君现代中药有限公司",
+          "power_company": "陕西旭东电力科技有限公司",
+          "bid_date": "2025-02-12",
+          "bid_price": 357.0
+        }
+      ]
     },
     {
-      "user_name": "中国电信股份有限公司广西分公司",
-      "power_company": "广西鼎聚新能源有限公司",
-      "bid_date": "2025-09-30",
-      "bid_price": 300.0
-    },
-    {
-      "user_name": "中国电信股份有限公司广西分公司",
-      "power_company": "华润电力（广西）销售有限公司",
-      "bid_date": "2025-09-30",
-      "bid_price": 300.0
-    },
-    {
-      "user_name": "横州市中医医院",
-      "power_company": "新奥（广西）能源销售有限公司",
-      "bid_date": "2025-09-17",
-      "bid_price": 280.0
-    },
-    {
-      "user_name": "河池市国有资本投资运营（集团）有限公司",
-      "power_company": "邦道科技有限公司",
-      "bid_date": "2025-08-25",
-      "bid_price": 230.0
-    },
-    {
-      "user_name": "北海市妇幼保健院（北海市妇幼保健计划生育服务中心）",
-      "power_company": "广西能弘配售电有限公司",
-      "bid_date": "2025-08-20",
-      "bid_price": 293.0
-    },
-    {
-      "user_name": "南宁威凯智慧物业服务有限公司",
-      "power_company": "华润电力（广西）销售有限公司",
-      "bid_date": "2025-08-13",
-      "bid_price": 298.5
-    },
-    {
-      "user_name": "北海润捷城市公共交通运输有限公司",
-      "power_company": "广西能弘配售电有限公司",
-      "bid_date": "2025-08-07",
-      "bid_price": 304.0
-    },
-    {
-      "user_name": "北海市中医医院",
-      "power_company": "广东华粤售电有限公司",
-      "bid_date": "2025-08-01",
-      "bid_price": 307.0
-    },
-    {
-      "user_name": "广西泽源环保水务有限公司",
-      "power_company": "广西能源联合售电有限公司",
-      "bid_date": "2025-07-31",
-      "bid_price": 305.0
-    },
-    {
-      "user_name": "中电建广西新材料有限公司",
-      "power_company": "华润电力（广西）销售有限公司",
-      "bid_date": "2025-07-31",
-      "bid_price": 305.0
-    },
-    {
-      "user_name": "中国银行股份有限公司广西区分行",
-      "power_company": "中国华电集团清洁能源有限公司",
-      "bid_date": "2025-07-11",
-      "bid_price": 315.0
-    },
-    {
-      "user_name": "象州瑞象投资开发集团有限公司",
-      "power_company": "国启中能（广西）电力有限公司",
-      "bid_date": "2025-07-03",
-      "bid_price": 338.0
-    },
-    {
-      "user_name": "广西岑兴高速公路发展有限公司",
-      "power_company": "国桂电力有限公司",
-      "bid_date": "2025-07-03",
-      "bid_price": 316.0
-    },
-    {
-      "user_name": "广西梧州岑梧高速公路有限公司",
-      "power_company": "国桂电力有限公司",
-      "bid_date": "2025-07-03",
-      "bid_price": 316.0
-    },
-    {
-      "user_name": "大新县中医医院",
-      "power_company": "瑞亿新电气有限责任公司",
-      "bid_date": "2025-06-29",
-      "bid_price": 330.0
-    },
-    {
-      "user_name": "广西新发展交通集团有限公司",
-      "power_company": "新奥（广西）能源销售有限公司",
-      "bid_date": "2025-06-16",
-      "bid_price": 335.0
-    },
-    {
-      "user_name": "宾阳县人民医院",
-      "power_company": "瑞亿新电气有限责任公司",
-      "bid_date": "2025-05-30",
-      "bid_price": 340.0
-    },
-    {
-      "user_name": "广西交通投资集团有限公司",
-      "power_company": "华能广西能源销售有限责任公司",
-      "bid_date": "2025-04-30",
-      "bid_price": 300.0
-    },
-    {
-      "user_name": "柳州东城文化旅游管理有限公司",
-      "power_company": "新奥（广西）能源销售有限公司",
-      "bid_date": "2025-04-24",
-      "bid_price": 332.5
-    },
-    {
-      "user_name": "广西五洲金桥农产品有限公司",
-      "power_company": "广西能源联合售电有限公司",
-      "bid_date": "2025-04-22",
-      "bid_price": 336.0
-    },
-    {
-      "user_name": "南宁凯鑫新材料有限公司",
-      "power_company": "瑞亿新电气有限责任公司",
-      "bid_date": "2025-04-18",
-      "bid_price": 333.0
-    },
-    {
-      "user_name": "广西交投资产管理有限公司",
-      "power_company": "广西国电投博能售电有限公司",
-      "bid_date": "2025-04-08",
-      "bid_price": 319.6
-    },
-    {
-      "user_name": "广西交投安祺物业有限公司",
-      "power_company": "广西国电投博能售电有限公司",
-      "bid_date": "2025-04-03",
-      "bid_price": 339.5
-    },
-    {
-      "user_name": "广西交投安祺物业有限公司",
-      "power_company": "华能广西能源销售有限责任公司",
-      "bid_date": "2025-04-03",
-      "bid_price": 339.5
-    },
-    {
-      "user_name": "广西交投安祺物业有限公司",
-      "power_company": "新奥（广西）能源销售有限公司",
-      "bid_date": "2025-04-03",
-      "bid_price": 339.5
-    },
-    {
-      "user_name": "广西南宁邕州饭店有限公司",
-      "power_company": "国桂电力有限公司",
-      "bid_date": "2025-03-17",
-      "bid_price": 330.0
-    },
-    {
-      "user_name": "广西华盛集团北海裕泰工艺有限责任公司",
-      "power_company": "新奥（广西）能源销售有限公司",
-      "bid_date": "2025-03-14",
-      "bid_price": 330.0
-    },
-    {
-      "user_name": "南宁明园饭店有限责任公司",
-      "power_company": "国桂电力有限公司",
-      "bid_date": "2025-03-10",
-      "bid_price": 330.0
-    },
-    {
-      "user_name": "河池市国有资本投资运营（集团）有限公司",
-      "power_company": "广西大任能源有限责任公司",
-      "bid_date": "2025-02-20",
-      "bid_price": 334.9
-    },
-    {
-      "user_name": "广西华原过滤系统股份有限公司",
-      "power_company": "广西普沃售电有限公司",
-      "bid_date": "2025-01-24",
-      "bid_price": 343.0
-    },
-    {
-      "user_name": "桂林桂广滑石开发有限公司",
-      "power_company": "广西大唐桂冠电力营销有限公司",
-      "bid_date": "2025-01-23",
-      "bid_price": 346.0
-    },
-    {
-      "user_name": "广西祥盛家居材料科技股份有限公司",
-      "power_company": "广西灏宇能源发展有限公司",
-      "bid_date": "2025-01-22",
-      "bid_price": 338.8
-    },
-    {
-      "user_name": "广西荣桂国际智慧物流有限公司",
-      "power_company": "广西新电力能源发展有限公司",
-      "bid_date": "2025-01-20",
-      "bid_price": 343.8
-    },
-    {
-      "user_name": "桂林市鼎晟新能源科技股份有限公司",
-      "power_company": "新奥（广西）能源销售有限公司",
-      "bid_date": "2025-01-20",
-      "bid_price": 333.9
-    },
-    {
-      "user_name": "广西百色工业投资发展集团有限公司",
-      "power_company": "新奥（广西）能源销售有限公司",
-      "bid_date": "2025-01-14",
-      "bid_price": 340.0
-    },
-    {
-      "user_name": "广西百色工业投资发展集团有限公司",
-      "power_company": "新奥（广西）能源销售有限公司",
-      "bid_date": "2025-01-14",
-      "bid_price": 344.4
-    },
-    {
-      "user_name": "东风柳州汽车有限公司",
-      "power_company": "新奥（广西）能源销售有限公司",
-      "bid_date": "2025-01-13",
-      "bid_price": 340.0
-    },
-    {
-      "user_name": "广西五金矿产进出口集团有限公司钦州分公司",
-      "power_company": "广西春凯源新能源有限公司",
-      "bid_date": "2025-01-10",
-      "bid_price": 339.6
-    },
-    {
-      "user_name": "广西防城港北投环保水务有限公司",
-      "power_company": "广西博阳售电有限公司",
-      "bid_date": "2025-01-06",
-      "bid_price": 344.0
-    },
-    {
-      "user_name": "广西防城港北投环保水务有限公司",
-      "power_company": "赛富电力集团股份有限公司",
-      "bid_date": "2025-01-06",
-      "bid_price": 344.0
-    },
-    {
-      "user_name": "广西博庆食品有限公司",
-      "power_company": "广西国能综合能源服务有限公司",
-      "bid_date": "2025-01-03",
-      "bid_price": 375.0
+      "新疆维吾尔自治区": [
+        {
+          "user_name": "新疆青湖天康食品有限公司",
+          "power_company": "山西风行测控股份有限公司",
+          "bid_date": "2025-03-12",
+          "bid_price": 221.2
+        }
+      ]
     }
   ]
 }

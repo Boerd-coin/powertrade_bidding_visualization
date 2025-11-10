@@ -28,14 +28,17 @@ class DataHandler {
      * 异步加载JSON数据
      * @param {string} dataUrl - 数据文件URL
      * @param {boolean} useCache - 是否使用缓存
+     * @param {string} region - 指定省份区域，如果不指定则返回第一个省份的数据
      * @returns {Promise<Array>} 返回处理后的数据数组
      */
-    async loadData(dataUrl = './bidding_data.json', useCache = true) {
+    async loadData(dataUrl = './bidding_data.json', useCache = true, region = null) {
         try {
+            const cacheKey = `${dataUrl}:${region || 'default'}`;
+            
             // 检查缓存
-            if (useCache && this.dataCache.has(dataUrl)) {
-                console.log('从缓存加载数据');
-                return this.dataCache.get(dataUrl);
+            if (useCache && this.dataCache.has(cacheKey)) {
+                console.log('从缓存加载数据:', region || '默认');
+                return this.dataCache.get(cacheKey);
             }
 
             if (this.isLoading) {
@@ -45,7 +48,7 @@ class DataHandler {
             this.isLoading = true;
             this.showLoadingState(true);
 
-            console.log(`开始加载数据: ${dataUrl}`);
+            console.log(`开始加载数据: ${dataUrl}, 地区: ${region || '默认'}`);
             
             const response = await fetch(dataUrl, {
                 method: 'GET',
@@ -61,21 +64,21 @@ class DataHandler {
 
             const jsonData = await response.json();
             
-            // 验证数据结构
-            const validatedData = this.validateDataStructure(jsonData);
+            // 验证数据结构并获取指定省份数据
+            const validatedData = this.validateDataStructure(jsonData, region);
             
             // 处理数据
             const processedData = this.processData(validatedData);
             
             // 缓存数据
             if (useCache) {
-                this.dataCache.set(dataUrl, processedData);
+                this.dataCache.set(cacheKey, processedData);
             }
 
             this.rawData = validatedData;
             this.processedData = processedData;
 
-            console.log(`数据加载成功，共 ${processedData.length} 条记录`);
+            console.log(`数据加载成功，共 ${processedData.length} 条记录，地区: ${region || '默认'}`);
             
             return processedData;
 
@@ -92,30 +95,58 @@ class DataHandler {
     /**
      * 验证数据结构
      * @param {Object} jsonData - JSON数据对象
+     * @param {string} region - 指定省份区域
      * @returns {Array} 验证后的数据数组
      */
-    validateDataStructure(jsonData) {
+    validateDataStructure(jsonData, region = null) {
         if (!jsonData) {
             throw new Error('数据为空');
         }
 
-        // 只处理包含data字段的对象结构
-        let dataArray;
-        if (jsonData.data && Array.isArray(jsonData.data)) {
-            dataArray = jsonData.data;
-        } else {
+        // 检查是否包含data字段
+        if (!jsonData.data || !Array.isArray(jsonData.data)) {
             throw new Error('数据格式不正确，期望包含data字段的对象');
         }
 
-        if (dataArray.length === 0) {
-            throw new Error('数据为空');
+        // 获取省份数据
+        let provinceData = null;
+        
+        if (region) {
+            // 查找指定省份的数据
+            for (const item of jsonData.data) {
+                if (item[region] && Array.isArray(item[region])) {
+                    provinceData = item[region];
+                    break;
+                }
+            }
+            
+            if (!provinceData) {
+                throw new Error(`未找到指定省份的数据: ${region}`);
+            }
+        } else {
+            // 如果没有指定省份，使用第一个省份的数据
+            const firstProvince = jsonData.data[0];
+            if (!firstProvince) {
+                throw new Error('没有可用的省份数据');
+            }
+            
+            const provinceName = Object.keys(firstProvince)[0];
+            provinceData = firstProvince[provinceName];
+            
+            if (!Array.isArray(provinceData)) {
+                throw new Error('省份数据格式错误，应为数组');
+            }
+        }
+
+        if (provinceData.length === 0) {
+            throw new Error('省份数据为空');
         }
 
         // 验证每条记录
         const validatedData = [];
         const errors = [];
 
-        dataArray.forEach((item, index) => {
+        provinceData.forEach((item, index) => {
             try {
                 const validatedItem = this.validateRecord(item, index);
                 validatedData.push(validatedItem);
@@ -128,7 +159,6 @@ class DataHandler {
 
         if (errors.length > 0) {
             console.warn('数据验证警告:', errors);
-            // 数据已经过人工校核，不再因错误比例限制数据加载
         }
 
         if (validatedData.length === 0) {
@@ -494,6 +524,39 @@ class DataHandler {
             
             default:
                 throw new Error(`不支持的导出格式: ${format}`);
+        }
+    }
+
+    /**
+     * 获取可用的省份列表
+     * @param {string} dataUrl - 数据文件URL
+     * @returns {Promise<Array>} 省份名称数组
+     */
+    async getAvailableRegions(dataUrl = './bidding_data.json') {
+        try {
+            const response = await fetch(dataUrl);
+            if (!response.ok) {
+                throw new Error(`数据加载失败: ${response.status}`);
+            }
+            
+            const jsonData = await response.json();
+            
+            if (!jsonData.data || !Array.isArray(jsonData.data)) {
+                throw new Error('数据格式错误');
+            }
+            
+            const regions = [];
+            jsonData.data.forEach(item => {
+                const regionName = Object.keys(item)[0];
+                if (regionName) {
+                    regions.push(regionName);
+                }
+            });
+            
+            return regions;
+        } catch (error) {
+            console.error('获取省份列表失败:', error);
+            throw error;
         }
     }
 
