@@ -3,6 +3,18 @@
     {
       "新疆维吾尔自治区": [
         {
+          "user_name": "新疆蓝山屯河科技股份有限公司",
+          "power_company": "新疆信发博焘能源发展有限公司",
+          "bid_date": "2025-12-04",
+          "bid_price": 193.0
+        },
+        {
+          "user_name": "阿瓦提县卡尔墩农场有限责任公司",
+          "power_company": "安徽信友售电有限公司",
+          "bid_date": "2025-11-27",
+          "bid_price": 180.0
+        },
+        {
           "user_name": "托克逊县人民医院",
           "power_company": "新疆众联益恒能源投资有限公司",
           "bid_date": "2025-11-04",
@@ -27,6 +39,12 @@
           "bid_price": 200.0
         },
         {
+          "user_name": "乌鲁木齐市盛天隆投资有限公司",
+          "power_company": "新疆新聚能售电服务有限公司",
+          "bid_date": "2025-09-16",
+          "bid_price": 212.0
+        },
+        {
           "user_name": "新疆幸福谊家康养服务有限公司",
           "power_company": "新疆聚信合电力有限公司",
           "bid_date": "2025-08-29",
@@ -37,6 +55,12 @@
           "power_company": "山西风行测控股份有限公司",
           "bid_date": "2025-03-12",
           "bid_price": 221.2
+        },
+        {
+          "user_name": "阿瓦提县卡尔墩农场有限责任公司",
+          "power_company": "新疆润博能源有限公司",
+          "bid_date": "2025-01-13",
+          "bid_price": 240.0
         }
       ]
     },
@@ -321,6 +345,12 @@
           "power_company": "山西恒阳环创能源发展有限公司",
           "bid_date": "2025-09-08",
           "bid_price": 253.48
+        },
+        {
+          "user_name": "西安市胸科医院（西安市呼吸疾病研究所）",
+          "power_company": "陕西乐般电力科技有限公司",
+          "bid_date": "2025-07-15",
+          "bid_price": 309.0
         },
         {
           "user_name": "西安普天通信有限公司",
