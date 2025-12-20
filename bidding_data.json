@@ -1,12 +1,130 @@
 {
   "data": [
     {
+      "陕西省": [
+        {
+          "user_name": "陕西电子芯业时代科技有限公司",
+          "power_company": "国网陕西综合能源服务有限公司",
+          "bid_date": "2025-12-16",
+          "bid_price": 295.0
+        },
+        {
+          "user_name": "西安中铁轨道交通有限公司",
+          "power_company": "陕西旭东电力科技有限公司",
+          "bid_date": "2025-12-09",
+          "bid_price": 278.5
+        },
+        {
+          "user_name": "咸阳纺织集团有限公司",
+          "power_company": "中能国宏（北京）新能源有限公司",
+          "bid_date": "2025-12-09",
+          "bid_price": 278.89
+        },
+        {
+          "user_name": "陕西省空港民航产业投资有限公司",
+          "power_company": "山西恒阳环创能源发展有限公司",
+          "bid_date": "2025-10-14",
+          "bid_price": 280.0
+        },
+        {
+          "user_name": "永寿县人民医院",
+          "power_company": "国汇电能（山西）实业有限公司",
+          "bid_date": "2025-09-29",
+          "bid_price": 308.0
+        },
+        {
+          "user_name": "陕西电子芯业时代科技有限公司",
+          "power_company": "山西恒阳环创能源发展有限公司",
+          "bid_date": "2025-09-08",
+          "bid_price": 253.48
+        },
+        {
+          "user_name": "西安市胸科医院（西安市呼吸疾病研究所）",
+          "power_company": "陕西乐般电力科技有限公司",
+          "bid_date": "2025-07-15",
+          "bid_price": 309.0
+        },
+        {
+          "user_name": "西安普天通信有限公司",
+          "power_company": "陕西洁能售电有限公司",
+          "bid_date": "2025-06-06",
+          "bid_price": 305.0
+        },
+        {
+          "user_name": "西安市铁路中心医院",
+          "power_company": "山西恒阳环创能源发展有限公司",
+          "bid_date": "2025-05-13",
+          "bid_price": 320.0
+        },
+        {
+          "user_name": "陕西利君现代中药有限公司",
+          "power_company": "陕西旭东电力科技有限公司",
+          "bid_date": "2025-02-12",
+          "bid_price": 357.0
+        }
+      ]
+    },
+    {
       "新疆维吾尔自治区": [
+        {
+          "user_name": "布尔津县津城供热有限责任公司",
+          "power_company": "新疆粤水电能源有限公司",
+          "bid_date": "2025-12-15",
+          "bid_price": 181.0
+        },
+        {
+          "user_name": "中国电信股份有限公司新疆分公司",
+          "power_company": "新疆华能能源销售有限公司",
+          "bid_date": "2025-12-14",
+          "bid_price": 179.0
+        },
+        {
+          "user_name": "乌鲁木齐房地产开发（集团）物业服务有限公司",
+          "power_company": "新疆新聚能售电服务有限公司",
+          "bid_date": "2025-12-09",
+          "bid_price": 171.0
+        },
+        {
+          "user_name": "伊宁市城市运营（集团）有限责任公司",
+          "power_company": "四川川能智网实业有限公司",
+          "bid_date": "2025-12-08",
+          "bid_price": 190.0
+        },
+        {
+          "user_name": "新疆维吾尔自治区通信产业服务有限公司物业服务分公司",
+          "power_company": "中能国宏（北京）新能源有限公司",
+          "bid_date": "2025-12-08",
+          "bid_price": 175.0
+        },
+        {
+          "user_name": "中联润世新疆煤业有限公司",
+          "power_company": "新疆天电电力销售有限责任公司",
+          "bid_date": "2025-12-06",
+          "bid_price": 182.0
+        },
         {
           "user_name": "新疆蓝山屯河科技股份有限公司",
           "power_company": "新疆信发博焘能源发展有限公司",
           "bid_date": "2025-12-04",
           "bid_price": 193.0
+        },
+        {
+          "user_name": "中国联合网络通信有限公司新疆维吾尔自治区分公司",
+          "power_company": "新疆深能售电有限公司",
+          "bid_date": "2025-12-03",
+          "bid_price": 180.0
+        },
+        {
+          "user_name": "河南能源集团有限公司",
+          "power_company": "新疆天电电力销售有限责任公司",
+          "bid_date": "2025-12-02",
+          "bid_price": 182.0
+        },
+        {
+          "user_name": "新疆蓝山屯河科技股份有限公司",
+          "power_company": "国能新疆能源销售有限公司",
+          "bid_date": "2025-12-01",
+          "bid_price": 180.0
         },
         {
           "user_name": "阿瓦提县卡尔墩农场有限责任公司",
@@ -66,6 +184,18 @@
     },
     {
       "广西壮族自治区": [
+        {
+          "user_name": "广西剑麻集团山圩剑麻制品有限公司",
+          "power_company": "瑞亿新电气有限责任公司",
+          "bid_date": "2025-12-12",
+          "bid_price": 240.0
+        },
+        {
+          "user_name": "南丹县人民医院",
+          "power_company": "广西能弘配售电有限公司",
+          "bid_date": "2025-12-10",
+          "bid_price": 258.0
+        },
         {
           "user_name": "广西扶绥县正信资产投资管理有限公司",
           "power_company": "瑞亿新电气有限责任公司",
@@ -323,52 +453,6 @@
           "power_company": "广西国能综合能源服务有限公司",
           "bid_date": "2025-01-03",
           "bid_price": 375.0
-        }
-      ]
-    },
-    {
-      "陕西省": [
-        {
-          "user_name": "陕西省空港民航产业投资有限公司",
-          "power_company": "山西恒阳环创能源发展有限公司",
-          "bid_date": "2025-10-14",
-          "bid_price": 280.0
-        },
-        {
-          "user_name": "永寿县人民医院",
-          "power_company": "国汇电能（山西）实业有限公司",
-          "bid_date": "2025-09-29",
-          "bid_price": 308.0
-        },
-        {
-          "user_name": "陕西电子芯业时代科技有限公司",
-          "power_company": "山西恒阳环创能源发展有限公司",
-          "bid_date": "2025-09-08",
-          "bid_price": 253.48
-        },
-        {
-          "user_name": "西安市胸科医院（西安市呼吸疾病研究所）",
-          "power_company": "陕西乐般电力科技有限公司",
-          "bid_date": "2025-07-15",
-          "bid_price": 309.0
-        },
-        {
-          "user_name": "西安普天通信有限公司",
-          "power_company": "陕西洁能售电有限公司",
-          "bid_date": "2025-06-06",
-          "bid_price": 305.0
-        },
-        {
-          "user_name": "西安市铁路中心医院",
-          "power_company": "山西恒阳环创能源发展有限公司",
-          "bid_date": "2025-05-13",
-          "bid_price": 320.0
-        },
-        {
-          "user_name": "陕西利君现代中药有限公司",
-          "power_company": "陕西旭东电力科技有限公司",
-          "bid_date": "2025-02-12",
-          "bid_price": 357.0
         }
       ]
     }
